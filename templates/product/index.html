@@ -1,1 +1,54 @@
-<h1>Product</h1>
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Liste des produits</h3>
+            <a href="{% url 'product:add_product' %}" class="btn btn-outline-primary float-right">Créer</a>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Réference</th>
+                    <th>Nom</th>
+                    <th>Catégorie</th>
+                    <th>Prix d'achat</th>
+                    <th>Prix de vente</th>
+                    <th>Image</th>
+                    <th>Disponibilité</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product.reference }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.category }}</td>
+                        <td>{{ product.buy_price }}</td>
+                        <td>{{ product.sell_price }}</td>
+                        <td>{{ product.image }}</td>
+                        <td>{{ product.availability }}</td>
+                        <td>
+                            <div class="row">
+                                <div>
+                                    <a href="{% url 'product:edit_product' product.id %}" class="btn btn-warning btn-sm mr-3 mb-1"><i class="fas fa-edit"></i></a>
+                                </div>
+                                <div>
+                                    <a href="{% url 'product:delete_product' product.id %}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <!-- /.card-body -->
+    </div>
+{% endblock %}

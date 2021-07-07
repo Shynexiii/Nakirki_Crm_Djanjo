@@ -1,0 +1,9 @@
+{% extends 'layouts/layout.html' %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" name="Submit" class="btn btn-primary btn-sm">Sauvegarde</button>
+    </form>
+{% endblock %}

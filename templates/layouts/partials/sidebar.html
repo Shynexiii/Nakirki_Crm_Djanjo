@@ -15,28 +15,27 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-header mb-2">MENU</li>
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+
+                <li class="nav-item">
+                    <a href="{% url 'provider:list_provider' %}" class="nav-link">
                         <p>
-                            Starter Pages
-                            <i class="right fas fa-angle-left"></i>
+                            Fournisseurs
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Active Page</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inactive Page</p>
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'product:list_product' %}" class="nav-link">
+                        <p>
+                            Produits
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'product:list_category' %}" class="nav-link">
+                        <p>
+                            Catégories
+                        </p>
+                    </a>
                 </li>
 
             </ul>
