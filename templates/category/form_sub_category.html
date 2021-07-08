@@ -11,6 +11,10 @@
             {{ form.errors }}
             <div class="row">
                 <div class="col">
+                    <labe for="{{ form.category.id_for_label }}">{{ form.category.label }}</labe>
+                    {{ form.category }}
+                </div>
+                <div class="col">
                     <labe for="{{ form.name.id_for_label }}">{{ form.name.label }}</labe>
                     {{ form.name }}
                 </div>

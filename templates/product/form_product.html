@@ -3,7 +3,46 @@
 {% block content %}
     <form action="" method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" name="Submit" class="btn btn-primary btn-sm">Sauvegarde</button>
+        <div class="row">
+            <div class="col">
+                <labe for="{{ form.reference.id_for_label }}">{{ form.reference.label }}</labe>
+                {{ form.reference }}
+            </div>
+            <div class="col">
+                <labe for="{{ form.name.id_for_label }}">{{ form.name.label }}</labe>
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <labe for="{{ form.category.id_for_label }}">{{ form.category.label }}</labe>
+                {{ form.category }}
+            </div>
+            <div class="col">
+                <labe for="{{ form.sub_category.id_for_label }}">{{ form.sub_category.label }}</labe>
+                {{ form.sub_category }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <labe for="{{ form.buy_price.id_for_label }}">{{ form.buy_price.label }}</labe>
+                {{ form.buy_price }}
+            </div>
+            <div class="col">
+                <labe for="{{ form.sell_price.id_for_label }}">{{ form.sell_price.label }}</labe>
+                {{ form.sell_price }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <labe for="{{ form.image.id_for_label }}">{{ form.image.label }}</labe>
+                {{ form.image }}
+            </div>
+            <div class="col">
+                <labe for="{{ form.availability.id_for_label }}">{{ form.availability.label }}</labe>
+                {{ form.availability }}
+            </div>
+        </div>
+        <button type="submit" name="Submit" class="btn btn-primary btn-sm mt-3">Sauvegarde</button>
     </form>
 {% endblock %}

@@ -23,7 +23,7 @@ def add_product(request,):
     }
     return render(request, 'product/form_product.html', context)
 
-def add_category(request,):
+def add_category(request):
     form = CategoryForm()
     if request.method == "POST":
         form = CategoryForm(request.POST)
@@ -45,7 +45,7 @@ def add_sub_category(request, pk):
     context = {
         'form' : form,
     }
-    return render(request, 'category/form_category.html', context)
+    return render(request, 'category/form_sub_category.html', context)
 
 def edit_product(request, pk):
     product = Product.objects.get(pk = pk)
@@ -104,7 +104,7 @@ def edit_sub_category(request, pk):
     context = {
         'form' : form
     }
-    return render(request, 'category/edit_category.html', context)
+    return render(request, 'category/form_sub_category.html', context)
 
 def delete_product(request, pk):
     product = Product.objects.get(pk=pk)
